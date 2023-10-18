@@ -1,20 +1,32 @@
-import java.util.Arrays;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class No2675 {
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        String sentence = s.nextLine();
-        char[] arr = sentence.toCharArray();
-        int space = 0;
-        for (int i=0; i<arr.length; i++) {
-            if (arr[i] == ' ') {
-                space++;
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int cnt = Integer.parseInt(br.readLine());
+        int num = 0;
+        String word = "";
+        while (cnt > 0) {
+            String[] input = br.readLine().split(" ");
+            num = Integer.parseInt(input[0]);
+            word = input[1];
+
+            for (int i = 0; i < word.length(); i++) {
+                for (int j = 0; j < num; j++) {
+                    bw.write(word.charAt(i));
+                }
             }
+            bw.newLine();
+            cnt--;
         }
-        if (arr.length > 0) {
-            space++;
-        }
-        System.out.println(space);
+
+        br.close();
+        bw.flush();
+        bw.close();
     }
 }
