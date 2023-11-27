@@ -11,3 +11,4 @@ https://www.acmicpc.net/user/zerosilver00
 6) 심화1
 7) 2차원 배열
 8) 일반 수학1
+9) 약수, 배수와 소수
